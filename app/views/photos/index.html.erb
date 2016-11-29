@@ -10,8 +10,9 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title"><%= photo.user_id %></h3>
+    </div>
       <div class="panel-body">
-        <img src="<%= photo.image %>" class = "img-responsive">
+      <a href="/photos/<%=photo.id%>"><img src="<%= photo.image %>" class = "img-responsive" width = 100>
         <ul class="media-list">
           <li class="media">
             <div class="media-left">

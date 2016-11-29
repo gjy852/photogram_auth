@@ -11,8 +11,9 @@
       <% @user.likes.each do |like| %>
       <tr>
         <td><%= like.photo_id %></td>
+        <td><%= Photo.find(like.photo_id).caption %></td>
 
-        <td><img src="<%= Photo.find_by(3).image %>"> </td>
+        <td><a href="/photos/<%= like.photo_id %>"><img src="<%= Photo.find(like.photo_id).image %>"> </a></td>
         <% end %>
       </dl>
     </div>
