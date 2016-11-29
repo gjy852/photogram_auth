@@ -6,8 +6,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-   
-    render("users/show.html.erb")
+     render("users/show.html.erb")
+  end
+
+  def current_user_likes
+    @user = User.find(current_user.id)
   end
 
 end

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # READ
   get "/users", :controller => "users", :action => "index"
   get "/users/:id", :controller => "users", :action => "show"
+  get "/my_likes", :controller => "users", :action => "current_user_likes"
 
 
   #------------------------------
@@ -36,7 +37,6 @@ Rails.application.routes.draw do
 
   # READ
   get "/likes", :controller => "likes", :action => "index"
-  get "/my_likes", :controller => "likes", :action => "current_user_likes"
   get "/likes/:id", :controller => "likes", :action => "show"
 
   # UPDATE
