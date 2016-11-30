@@ -1,32 +1,41 @@
 <div class="page-header">
-  <h1>
-    Photos
-    <a href="/photos/new" class="btn btn-lg btn-success">New Photo</a>
-  </h1>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    <a href="/photos/new" class="btn btn-default btn-block"><i class="fa fa-plus"></i> New Photo</a>
+  </div>
 </div>
+
 
 <div class="page-header">
   <% @photos.each do |photo| %>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title"><%= photo.user_id %></h3>
+      <h3 class="panel-title">
+        <a href="/users/<%=photo.user_id %>"><%= User.find(photo.user_id).username %></a>
+        <small> <%= time_ago_in_words(Time.now) %> ago </small>
+      </h3>
+
     </div>
-      <div class="panel-body">
-      <a href="/photos/<%=photo.id%>"><img src="<%= photo.image %>" class = "img-responsive" width = 100>
-        <ul class="media-list">
-          <li class="media">
-            <div class="media-left">
-              <a href="#">
-                <img class="media-object" src="..." alt="...">
-              </a>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading">Media heading</h4>
-              ...
-            </div>
-          </li>
-        </ul>
+    <div class="panel-body">
+      <a href="/photos/<%= photo.id %>"><img src="<%= photo.image %>" class = "img-responsive" height = 450 width = 338></a>
+      <li class="media">
+        <div class="media-body">
+          <h6 class="media-heading">
+            <a href="/users/<%= photo.user_id %>"> <%=User.find(photo.user_id).username %> </a>  </h6>
+            
+          </div>
+        </li>
       </div>
-      <% end %>
     </div>
+    <% end %>
   </div>
+
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel title</h3>
+  </div>
+  <div class="panel-body">
+    Panel content
+  </div>
+</div>
+</div>

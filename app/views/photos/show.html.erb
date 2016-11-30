@@ -1,19 +1,20 @@
-<div class="page-header">
-  <h3>Photo #<%= @photo.id %></h3>
-</div>
+<div class="container">
+  <div class = "row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Username<small> <%= time_ago_in_words(Time.now) %> ago </small>
+        </h3>
+        </div>
+
+<div class="panel-body">
+  <dd><span class=hidden><%= @photo.user_id %></span></dd>
+  <dd><span class=hidden><%= @photo.caption %></span></dd>
+  <dd><img src="<%= @photo.image %>" class="img-responsive"</dd>
 
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Caption</dt>
-      <dd><%= @photo.caption %></dd>
-
-      <dt>Image</dt>
-      <dd><img src="<%= @photo.image %>"</dd>
-
-      <dt>User</dt>
-      <dd><%= @photo.user_id %></dd>
-
     </dl>
 
     <div class="btn-group btn-group-justified">
